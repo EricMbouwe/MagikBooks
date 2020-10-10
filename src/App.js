@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      Hello redux
+      Hello redux deployed on heroku
     </div>
   );
 }
