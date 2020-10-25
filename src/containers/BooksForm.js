@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class BooksForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: ''
-    }
+      title: "",
+    };
   }
 
   handleChange = (e) => {
     this.setState({
-      [e.target.id]: e.target.value
-    })
-  }
+      [e.target.id]: e.target.value,
+    });
+  };
 
   render() {
     const categories = [
@@ -29,7 +29,7 @@ class BooksForm extends Component {
       <div>
         <form>
           <label htmlFor="title">Title</label>
-          <input type="text" onChange={this.handleChange} id='title'/>
+          <input type="text" onChange={this.handleChange} id="title" />
           <select name="categories" id="categories">
             <option value="">Action</option>
             <option value="">Biography</option>
