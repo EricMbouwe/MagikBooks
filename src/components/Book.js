@@ -7,13 +7,13 @@ class Book extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <tr>
           <td>{this.props.details.id}</td>
           <td>{this.props.details.title}</td>
           <td>{this.props.details.category}</td>
         </tr>
-      </div>
+      </React.Fragment>
     );
   }
 }
