@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Book extends Component {
   constructor(props) {
@@ -8,9 +8,11 @@ class Book extends Component {
   render() {
     return (
       <div>
-        <span>{this.props.book.id}</span>
-        <span>{this.props.book.title}</span>
-        <span>{this.props.book.category}</span>
+        <tr>
+          <td>{this.props.details.id}</td>
+          <td>{this.props.details.title}</td>
+          <td>{this.props.details.category}</td>
+        </tr>
       </div>
     );
   }

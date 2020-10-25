@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Book from '../components/Book'
 
 class BooksList extends Component {
@@ -7,6 +8,8 @@ class BooksList extends Component {
   }
 
   render() {
+    const { books } = this.props
+
     return (
       <div>
         <table>
@@ -16,7 +19,9 @@ class BooksList extends Component {
             <th>CATEGORY</th>
           </thead>
           <tbody>
-            <Book />
+            {books.map(book => {
+              return <Book details={book} key={book.id} />
+            })}
           </tbody>
         </table>
       </div>
@@ -24,8 +29,8 @@ class BooksList extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { books: state };
-};
+const mapStateToProps = (state) => ({
+  books: state.books
+});
 
-export default BooksList;
+export default connect(mapStateToProps)(BooksList);
