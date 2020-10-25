@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Book from '../components/Book'
 
 class BooksList extends Component {
   constructor(props) {
@@ -15,11 +16,7 @@ class BooksList extends Component {
             <th>CATEGORY</th>
           </thead>
           <tbody>
-            <tr>
-              <td>001</td>
-              <td>Dbz</td>
-              <td>Anime</td>
-            </tr>
+            <Book />
           </tbody>
         </table>
       </div>

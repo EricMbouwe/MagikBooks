@@ -3,6 +3,15 @@ import React, { Component } from 'react';
 class BooksForm extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      title = ''
+    }
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    })
   }
 
   render() {
@@ -20,7 +29,7 @@ class BooksForm extends Component {
       <div>
         <form action="">
           <label htmlFor="title">Title</label>
-          <input type="text" />
+          <input type="text" onChange={this.handleChange} id='title'/>
           <select name="categories" id="categories">
             <option value="">Action</option>
             <option value="">Biography</option>
