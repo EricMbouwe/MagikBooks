@@ -14,9 +14,9 @@ const Book = ({ details }) => (
 export default Book;
 
 Book.propTypes = {
-  details: {
+  details: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-  },
+  }).isRequired,
 };
