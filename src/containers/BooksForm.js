@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class BooksForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
+      title: '',
     };
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value,
     });
@@ -16,28 +16,33 @@ class BooksForm extends Component {
 
   render() {
     const categories = [
-      "Action",
-      "Biography",
-      "History",
-      "Horror",
-      "Kids",
-      "Learning",
-      "Sci-Fi",
+      'Action',
+      'Biography',
+      'History',
+      'Horror',
+      'Kids',
+      'Learning',
+      'Sci-Fi',
     ];
+
+    const { title } = this.state;
 
     return (
       <div>
         <form>
           <label htmlFor="title">Title</label>
-          <input type="text" onChange={this.handleChange} id="title" />
+          <input
+            type="text"
+            value={title}
+            onChange={this.handleChange}
+            id="title"
+          />
           <select name="categories" id="categories">
-            <option value="">Action</option>
-            <option value="">Biography</option>
-            <option value="">History</option>
-            <option value="">Horror</option>
-            <option value="">Kids</option>
-            <option value="">Learning</option>
-            <option value="">Sci-Fi</option>
+            {categories.map(category => (
+              <option value={category} key={category}>
+                {category}
+              </option>
+            ))}
           </select>
           <button type="submit">Create</button>
         </form>
