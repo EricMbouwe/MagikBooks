@@ -27,7 +27,7 @@ class BooksForm extends Component {
 
     return (
       <div>
-        <form action="">
+        <form>
           <label htmlFor="title">Title</label>
           <input type="text" onChange={this.handleChange} id='title'/>
           <select name="categories" id="categories">

@@ -1,4 +1,12 @@
-const booksReducer = (state = [], action) => {
+const initialState = [
+  { id: 0, title: "naruto", category: "action" },
+  { id: 1, title: "onepiece", category: "action" },
+  { id: 2, title: "casa", category: "biography" },
+  { id: 3, title: "doctor", category: "horor" },
+  { id: 4, title: "league", category: "history" },
+];
+
+export const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
       return [...state, action.payload.book]
