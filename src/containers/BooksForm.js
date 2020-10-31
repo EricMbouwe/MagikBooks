@@ -5,6 +5,7 @@ class BooksForm extends Component {
     super(props);
     this.state = {
       title: '',
+      category: '' 
     };
   }
 
