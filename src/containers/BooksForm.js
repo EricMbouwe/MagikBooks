@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { createBook } from '../actions/index'
 
 class BooksForm extends Component {
   constructor(props) {
@@ -14,6 +15,17 @@ class BooksForm extends Component {
       [e.target.id]: e.target.value,
     });
   };
+
+  handleSubmit() {
+    this.setState((state) => {
+      const currentBook = state
+      submitNewBook(currentBook)
+      return {
+        input: '',
+        category: '',
+      };
+    });
+  }
 
   render() {
     const categories = [
@@ -40,7 +52,7 @@ class BooksForm extends Component {
               id="title"
             />
           </label>
-          <select name="categories" id="categories">
+          <select name="categories" id="category">
             {categories.map(category => (
               <option value={category} key={category}>
                 {category}
@@ -54,4 +66,12 @@ class BooksForm extends Component {
   }
 }
 
-export default BooksForm;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitNewBook: (newBook) => {
+      dispatch(createBook(newBook));
+    },
+  };
+};
+
+export default connect(mapDispatchToProps)(BooksForm);
