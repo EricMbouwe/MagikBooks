@@ -1,46 +1,47 @@
-import React, { Component } from "react";
-import { createBook } from "../actions/index";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { createBook } from '../actions/index';
 
 class BooksForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: Math.floor(Math.random() * 11),
-      title: "",
-      category: "Action",
+      title: '',
+      category: 'Action',
     };
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value,
     });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     const currentBook = this.state;
-    this.props.submitNewBook(currentBook);
+    const { submitNewBook } = this.props;
+    submitNewBook(currentBook);
     this.setState({
-      title: "",
-      category: "Action",
+      title: '',
+      category: 'Action',
     });
   };
 
   render() {
     const categories = [
-      "Action",
-      "Biography",
-      "History",
-      "Horror",
-      "Kids",
-      "Learning",
-      "Sci-Fi",
+      'Action',
+      'Biography',
+      'History',
+      'Horror',
+      'Kids',
+      'Learning',
+      'Sci-Fi',
     ];
 
     const { title } = this.state;
+    const { category } = this.state;
 
     return (
       <div>
@@ -54,10 +55,15 @@ class BooksForm extends Component {
               id="title"
             />
           </label>
-          <label>
+          <label htmlFor="category">
             Category :
-            <select name="category" id="category" onChange={this.handleChange}>
-              {categories.map((category) => (
+            <select
+              name="category"
+              id="category"
+              onChange={this.handleChange}
+              value={category}
+            >
+              {categories.map(category => (
                 <option value={category} key={category}>
                   {category}
                 </option>
@@ -71,13 +77,11 @@ class BooksForm extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    submitNewBook: (newBook) => {
-      dispatch(createBook(newBook));
-    },
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  submitNewBook: newBook => {
+    dispatch(createBook(newBook));
+  },
+});
 
 BooksForm.propTypes = {
   submitNewBook: PropTypes.func.isRequired,

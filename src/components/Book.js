@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Book = ({ book, handleDelete }) => (
   <>
@@ -7,7 +7,7 @@ const Book = ({ book, handleDelete }) => (
     <td>{book.title}</td>
     <td>{book.category}</td>
     <td>
-      <button onClick={() => handleDelete(book)}>Remove Book</button>
+      <button type="button" onClick={() => handleDelete(book)}>Remove Book</button>
     </td>
   </>
 );
