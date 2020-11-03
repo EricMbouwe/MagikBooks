@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { createBook } from "../actions/index";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 class BooksForm extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class BooksForm extends Component {
     this.state = {
       id: Math.floor(Math.random() * 11),
       title: "",
-      category: "",
+      category: "Action",
     };
   }
 
@@ -18,16 +19,15 @@ class BooksForm extends Component {
     });
   };
 
-  handleSubmit() {
-    this.setState((state) => {
-      const currentBook = state;
-      this.props.submitNewBook(currentBook);
-      return {
-        input: "",
-        category: "",
-      };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const currentBook = this.state;
+    this.props.submitNewBook(currentBook);
+    this.setState({
+      title: "",
+      category: "Action",
     });
-  }
+  };
 
   render() {
     const categories = [
@@ -41,11 +41,10 @@ class BooksForm extends Component {
     ];
 
     const { title } = this.state;
-    console.log(this.props);
 
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="title">
             Title :
             <input
@@ -55,14 +54,17 @@ class BooksForm extends Component {
               id="title"
             />
           </label>
-          <select name="category" id="category">
-            {categories.map((category) => (
-              <option value={category} key={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-          <button type="submit">Create</button>
+          <label>
+            Category :
+            <select name="category" id="category" onChange={this.handleChange}>
+              {categories.map((category) => (
+                <option value={category} key={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </label>
+          <input type="submit" value="Create" />
         </form>
       </div>
     );
@@ -77,4 +79,8 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapDispatchToProps)(BooksForm);
+BooksForm.propTypes = {
+  submitNewBook: PropTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatchToProps)(BooksForm);

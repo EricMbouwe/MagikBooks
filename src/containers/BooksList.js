@@ -24,12 +24,16 @@ const BooksList = ({ books }) => (
   </div>
 );
 
-const mapStateToProps = (state) => ({
-  books: state.books,
-});
+// const mapStateToProps = (state) => ({
+//   books: state.books,
+// });
 
-export default connect(mapStateToProps)(BooksList);
+const mapStateToProps = (state) => ({
+  books: state,
+});
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
+export default connect(mapStateToProps, null)(BooksList);
