@@ -4,7 +4,7 @@ export const REMOVE_BOOK = 'REMOVE_BOOK';
 export const createBook = book => ({
   type: CREATE_BOOK,
   payload: {
-    book,
+    book: { ...book, id: Math.floor(Math.random() * 10) },
   },
 });
 
