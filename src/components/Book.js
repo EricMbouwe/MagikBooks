@@ -1,13 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Book = ({ details }) => (
   <>
-    <tr>
-      <td>{details.id}</td>
-      <td>{details.title}</td>
-      <td>{details.category}</td>
-    </tr>
+    <td>{details.id}</td>
+    <td>{details.title}</td>
+    <td>{details.category}</td>
   </>
 );
 

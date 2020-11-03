@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
-import { createBook } from '../actions/index'
+import React, { Component } from "react";
+import { createBook } from "../actions/index";
+import { connect } from "react-redux";
 
 class BooksForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
-      category: '' 
+      id: Math.floor(Math.random() * 11),
+      title: "",
+      category: "",
     };
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value,
     });
@@ -18,27 +20,28 @@ class BooksForm extends Component {
 
   handleSubmit() {
     this.setState((state) => {
-      const currentBook = state
-      submitNewBook(currentBook)
+      const currentBook = state;
+      this.props.submitNewBook(currentBook);
       return {
-        input: '',
-        category: '',
+        input: "",
+        category: "",
       };
     });
   }
 
   render() {
     const categories = [
-      'Action',
-      'Biography',
-      'History',
-      'Horror',
-      'Kids',
-      'Learning',
-      'Sci-Fi',
+      "Action",
+      "Biography",
+      "History",
+      "Horror",
+      "Kids",
+      "Learning",
+      "Sci-Fi",
     ];
 
     const { title } = this.state;
+    console.log(this.props);
 
     return (
       <div>
@@ -52,8 +55,8 @@ class BooksForm extends Component {
               id="title"
             />
           </label>
-          <select name="categories" id="category">
-            {categories.map(category => (
+          <select name="category" id="category">
+            {categories.map((category) => (
               <option value={category} key={category}>
                 {category}
               </option>
