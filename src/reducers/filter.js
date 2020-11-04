@@ -1,8 +1,6 @@
 import { CHANGE_FILTER } from "../actions";
 
-const filter = 'All'
-
-export const filterReducer = (state = filter, action) => {
+const filterReducer = (state = 'All', action) => {
   switch (action.type) {
     case CHANGE_FILTER:
       state = action.payload.value
@@ -11,3 +9,5 @@ export const filterReducer = (state = filter, action) => {
       return state
   }
 }
+
+export default filterReducer
