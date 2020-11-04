@@ -15,3 +15,10 @@ export const removeBook = book => ({
     id: book.id,
   },
 });
+
+export const changeFilterAction = value => ({
+  type: CHANGE_FILTER,
+  payload: {
+    value
+  }
+})

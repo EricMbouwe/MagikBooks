@@ -1,4 +1,7 @@
-const CategoryFilter = () => {
+import React from 'react';
+// import PropTypes from 'prop-types';
+
+const CategoryFilter = ({ handleChange }) => {
   const categories = [
     'All',
     'Action',
@@ -10,9 +13,12 @@ const CategoryFilter = () => {
     'Sci-Fi',
   ];
 
-  return ( 
+  
+
+  return (
     <div>
-      <select name="category" id="category">
+      <select name="category" id="category"
+        onChange={handleChange}>
         {categories.map(category => (
           <option value={category} key={category}>
             {category}
@@ -22,5 +28,9 @@ const CategoryFilter = () => {
     </div>
   );
 }
- 
+
 export default CategoryFilter;
+
+// CategoryFilter.propTypes = {
+
+// }
