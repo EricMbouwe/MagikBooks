@@ -21,24 +21,17 @@ const BooksList = ({
     .filter(book => book.category === filter) : books
 
   return (
-    <div className='container'>
+    <div>
       <CategoryFilter handleChange={handleFilterChange} />
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>TITLE</th>
-            <th>CATEGORY</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredBooks.map(book => (
-            <tr key={book.id}>
-              <Book book={book} handleDelete={handleRemoveBook} />
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className='container' style={{marginTop: '30px'}}>
+        {filteredBooks.map(book => (
+          <div key={book.id} className='book-wrapper'>
+            <Book book={book} handleDelete={handleRemoveBook} />
+          </div>
+        ))}
+        <hr style={{
+          border: 'solid 1px #e8e8e8', margin: '30px 0'}}/>
+      </div>
     </div>
   );
 };

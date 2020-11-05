@@ -1,17 +1,28 @@
 :root {
   --pale-grey: #f5f6fa;
   --white: #ffffff;
-  --azure: #0290ff
+  --azure: #0290ff;
+  --black-three: #121212;
+  --font: #FAFAFA;
 }
 
 .App {
   text-align: center;
   width: 800px;
   height: 600px;
-  background-color: var(--white);
-  padding: 30px;
+  background-color: var(--font)
 }
 
 .container {
-  width: 600px;
+  width: 700px;
+  margin: auto;
+  height: 100%;
+}
+
+.book-wrapper {
+  background-color: var(--white);
+  margin: 10px 0;
+  padding: 15px;
+  border: solid 1px #e8e8e8;
+  border-radius: 4px;
 }
