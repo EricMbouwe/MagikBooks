@@ -5,15 +5,17 @@ import Book from '../components/Book';
 import { removeBook, changeFilterAction } from '../actions/index';
 import CategoryFilter from '../components/CategoryFilter';
 
-const BooksList = ({ books, deleteBook, changeFilter, filter }) => {
+const BooksList = ({
+  books, deleteBook, changeFilter, filter,
+}) => {
   const handleRemoveBook = book => {
     deleteBook(book);
   };
 
-  const handleFilterChange = (e) => {
-    const selectedValue = e.target.value
-    changeFilter(selectedValue)
-  }
+  const handleFilterChange = e => {
+    const selectedValue = e.target.value;
+    changeFilter(selectedValue);
+  };
 
   return (
     <div>
@@ -27,18 +29,19 @@ const BooksList = ({ books, deleteBook, changeFilter, filter }) => {
           </tr>
         </thead>
         <tbody>
-          {filter !== 'All' ?
-            books
+          {filter !== 'All'
+            ? books
               .filter(book => book.category === filter)
               .map(book => (
                 <tr key={book.id}>
                   <Book book={book} handleDelete={handleRemoveBook} />
                 </tr>
-              )) :
-            books.map(book => (
+              ))
+            : books.map(book => (
               <tr key={book.id}>
                 <Book book={book} handleDelete={handleRemoveBook} />
-              </tr>))}
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
@@ -47,7 +50,7 @@ const BooksList = ({ books, deleteBook, changeFilter, filter }) => {
 
 const mapStateToProps = state => ({
   books: state.books,
-  filter: state.filter
+  filter: state.filter,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -59,10 +62,11 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
   deleteBook: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

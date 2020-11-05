@@ -13,14 +13,17 @@ const CategoryFilter = ({ handleChange }) => {
     'Sci-Fi',
   ];
 
-  const handleSelection = (e) => {
-    handleChange(e)
-  }
+  const handleSelection = e => {
+    handleChange(e);
+  };
 
   return (
     <div>
-      <select name="category" id="category"
-        onChange={handleSelection}>
+      <select
+        name="category"
+        id="category"
+        onChange={handleSelection}
+      >
         {categories.map(category => (
           <option value={category} key={category}>
             {category}
@@ -29,10 +32,10 @@ const CategoryFilter = ({ handleChange }) => {
       </select>
     </div>
   );
-}
+};
 
 export default CategoryFilter;
 
 CategoryFilter.propTypes = {
   handleChange: PropTypes.func.isRequired,
-}
+};
