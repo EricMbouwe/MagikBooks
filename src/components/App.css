@@ -8,13 +8,13 @@
 
 .App {
   text-align: center;
-  width: 800px;
-  height: 600px;
-  background-color: var(--font)
+  width: 900px;
+  background-color: var(--font);
+  padding-bottom: 100px;
 }
 
 .container {
-  width: 700px;
+  width: 800px;
   margin: auto;
   height: 100%;
 }
