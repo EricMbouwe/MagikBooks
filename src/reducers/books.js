@@ -1,11 +1,11 @@
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions';
 
 const initialState = [
-  { id: 1, title: 'naruto', category: 'action' },
-  { id: 2, title: 'one piece', category: 'action' },
-  { id: 3, title: 'casa', category: 'biography' },
-  { id: 4, title: 'doctor', category: 'horor' },
-  { id: 5, title: 'league', category: 'history' },
+  { id: 1, title: 'naruto', category: 'Action' },
+  { id: 2, title: 'one piece', category: 'Sci-Fi' },
+  { id: 3, title: 'casa', category: 'Biography' },
+  { id: 4, title: 'doctor', category: 'Horror' },
+  { id: 5, title: 'league', category: 'History' },
 ];
 
 const booksReducer = (state = initialState, action) => {
