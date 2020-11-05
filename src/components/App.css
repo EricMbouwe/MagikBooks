@@ -1,12 +1,17 @@
 :root {
   --pale-grey: #f5f6fa;
   --white: #ffffff;
+  --azure: #0290ff
 }
 
-.Bookstore-CMS {
+.App {
   text-align: center;
-  color: purple;
   width: 800px;
   height: 600px;
   background-color: var(--white);
+  padding: 30px;
+}
+
+.container {
+  width: 600px;
 }

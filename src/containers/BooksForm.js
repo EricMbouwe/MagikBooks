@@ -44,7 +44,7 @@ class BooksForm extends Component {
     const { category } = this.state;
 
     return (
-      <div>
+      <div className='container'>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="title">
             Title :
@@ -53,6 +53,7 @@ class BooksForm extends Component {
               value={title}
               onChange={this.handleChange}
               id="title"
+              required
             />
           </label>
           <label htmlFor="category">

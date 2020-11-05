@@ -21,7 +21,7 @@ const BooksList = ({
     .filter(book => book.category === filter) : books
 
   return (
-    <div>
+    <div className='container'>
       <CategoryFilter handleChange={handleFilterChange} />
       <table>
         <thead>
