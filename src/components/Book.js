@@ -4,8 +4,16 @@ import PropTypes from 'prop-types';
 const Book = ({ book, handleDelete }) => (
   <>
     <div className='book-infos'>
-      <div className='infos'></div>
-      <div className='actions'></div>
+      <div className='infos'>
+        <small className='category'>{book.category}</small>
+        <p className='book-title'>{book.title}</p>
+        <small className='author'>Author</small>
+      </div>
+      <div className='actions'>
+        <button onclick={() => handleDelete(book)}>Comment</button>
+        <button onclick={() => handleDelete(book)}>Remove</button>
+        <button onclick={() => handleDelete(book)}>Edit</button>
+      </div>
     </div>
 
     <div className='book-status'>
@@ -21,7 +29,6 @@ const Book = ({ book, handleDelete }) => (
       <p>Chapter 17</p>
       <button type='button'>UPDATE PROGRESS</button>
     </div>
-    <button type="button" onClick={() => handleDelete(book)}>Remove Book</button>
   </>
 );
 

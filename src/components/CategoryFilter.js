@@ -19,7 +19,7 @@ const CategoryFilter = ({ handleChange }) => {
   };
 
   return (
-    <div className='' style={{ borderBottom: '1px solid #e8e8e8', backgroundColor: '#fff' }}>
+    <div className='' style={{ borderBottom: '1px solid #e8e8e8', backgroundColor: '#fff', padding: '20px' }}>
       <div className='panel-bg container'>
         <h1 className='title'>Bookstore CMS</h1>
         <h4 className='books'>BOOKS</h4>
