@@ -1,4 +1,12 @@
-.App {
+:root {
+  --pale-grey: #f5f6fa;
+  --white: #ffffff;
+}
+
+.Bookstore-CMS {
   text-align: center;
   color: purple;
+  width: 800px;
+  height: 600px;
+  background-color: var(--white);
 }

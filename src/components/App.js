@@ -5,7 +5,7 @@ import BooksForm from '../containers/BooksForm';
 
 function App() {
   return (
-    <div className="App">
+    <div className="Bookstore-CMS">
       <BooksList />
       <BooksForm />
     </div>
