@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const CategoryFilter = ({ handleChange }) => {
   const categories = [
@@ -13,12 +13,14 @@ const CategoryFilter = ({ handleChange }) => {
     'Sci-Fi',
   ];
 
-  
+  const handleSelection = (e) => {
+    handleChange(e)
+  }
 
   return (
     <div>
       <select name="category" id="category"
-        onChange={handleChange}>
+        onChange={handleSelection}>
         {categories.map(category => (
           <option value={category} key={category}>
             {category}
@@ -31,6 +33,6 @@ const CategoryFilter = ({ handleChange }) => {
 
 export default CategoryFilter;
 
-// CategoryFilter.propTypes = {
-
-// }
+CategoryFilter.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+}

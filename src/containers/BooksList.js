@@ -10,8 +10,9 @@ const BooksList = ({ books, deleteBook, changeFilter, filter }) => {
     deleteBook(book);
   };
 
-  const handleFilterChange = (filterValue) => {
-    changeFilter(filterValue)
+  const handleFilterChange = (e) => {
+    const selectedValue = e.target.value
+    changeFilter(selectedValue)
   }
 
   return (
@@ -26,17 +27,18 @@ const BooksList = ({ books, deleteBook, changeFilter, filter }) => {
           </tr>
         </thead>
         <tbody>
-          {filter === 'All' ?
+          {filter !== 'All' ?
+            books
+              .filter(book => book.category === filter)
+              .map(book => (
+                <tr key={book.id}>
+                  <Book book={book} handleDelete={handleRemoveBook} />
+                </tr>
+              )) :
             books.map(book => (
               <tr key={book.id}>
                 <Book book={book} handleDelete={handleRemoveBook} />
-              </tr>)) : books
-                .filter(book => book.category === filter)
-                .map(book => (
-                  <tr key={book.id}>
-                    <Book book={book} handleDelete={handleRemoveBook} />
-                  </tr>
-                ))}
+              </tr>))}
         </tbody>
       </table>
     </div>
@@ -52,8 +54,8 @@ const mapDispatchToProps = dispatch => ({
   deleteBook: book => {
     dispatch(removeBook(book));
   },
-  changeFilter: filterValue => {
-    dispatch(changeFilterAction(filterValue));
+  changeFilter: selectedValue => {
+    dispatch(changeFilterAction(selectedValue));
   },
 });
 
