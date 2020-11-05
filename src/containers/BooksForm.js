@@ -44,20 +44,20 @@ class BooksForm extends Component {
     const { category } = this.state;
 
     return (
-      <div className='container'>
+      <div className="container form-section">
+        <h1 className="form-title">ADD NEW BOOK</h1>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="title">
-            Title :
             <input
               type="text"
               value={title}
               onChange={this.handleChange}
               id="title"
+              placeholder="Book title"
               required
             />
           </label>
           <label htmlFor="category">
-            Category :
             <select
               name="category"
               id="category"
@@ -71,7 +71,7 @@ class BooksForm extends Component {
               ))}
             </select>
           </label>
-          <input type="submit" value="Create" />
+          <input className="form-btn" type="submit" value="ADD BOOK" />
         </form>
       </div>
     );

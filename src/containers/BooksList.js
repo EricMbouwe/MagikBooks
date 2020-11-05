@@ -18,19 +18,18 @@ const BooksList = ({
   };
 
   const filteredBooks = filter !== 'All' ? books
-    .filter(book => book.category === filter) : books
+    .filter(book => book.category === filter) : books;
 
   return (
     <div>
       <CategoryFilter handleChange={handleFilterChange} />
-      <div className='container' style={{marginTop: '30px'}}>
+      <div className="container" style={{ marginTop: '30px' }}>
         {filteredBooks.map(book => (
-          <div key={book.id} className='book-wrapper'>
+          <div key={book.id} className="book-wrapper">
             <Book book={book} handleDelete={handleRemoveBook} />
           </div>
         ))}
-        <hr style={{
-          border: 'solid 1px #e8e8e8', margin: '30px 0'}}/>
+        <hr style={{ border: 'solid 1px #e8e8e8', margin: '30px 0' }} />
       </div>
     </div>
   );

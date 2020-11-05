@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './CategoryFilter.css'
+import './CategoryFilter.css';
 
 const CategoryFilter = ({ handleChange }) => {
   const categories = [
@@ -19,15 +19,15 @@ const CategoryFilter = ({ handleChange }) => {
   };
 
   return (
-    <div className='' style={{ borderBottom: '1px solid #e8e8e8', backgroundColor: '#fff', padding: '20px' }}>
-      <div className='panel-bg container'>
-        <h1 className='title'>Bookstore CMS</h1>
-        <h4 className='books'>BOOKS</h4>
+    <div className="" style={{ borderBottom: '1px solid #e8e8e8', backgroundColor: '#fff', padding: '20px' }}>
+      <div className="panel-bg container">
+        <h1 className="title">Bookstore CMS</h1>
+        <h4 className="books">BOOKS</h4>
         <select
           name="category"
           id="category"
           onChange={handleSelection}
-          className='categories'
+          className="categories"
         >
           {categories.map(category => (
             <option value={category} key={category}>
@@ -35,7 +35,7 @@ const CategoryFilter = ({ handleChange }) => {
             </option>
           ))}
         </select>
-        <span className='icon'>icon</span>
+        <span className="icon">icon</span>
       </div>
     </div>
   );
