@@ -104,10 +104,17 @@
 
 .book-status {
   display: flex;
+  align-items: center;
 }
 
 .book-status .percentage {
   margin-left: 20px;
+}
+
+.loading-icon {
+  border: 3px solid var(--medium-blue);
+  border-radius: 100%;
+  padding: 20px;
 }
 
 .percentage .amount {

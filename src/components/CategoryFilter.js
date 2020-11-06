@@ -35,7 +35,7 @@ const CategoryFilter = ({ handleChange }) => {
             </option>
           ))}
         </select>
-        <div className="icon">co</div>
+        <div className="icon-avatar"><i className="fas fa-user-alt" /></div>
       </div>
     </div>
   );
