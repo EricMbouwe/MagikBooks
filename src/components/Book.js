@@ -19,7 +19,7 @@ const Book = ({ book, handleDelete }) => (
     <div className="book-status">
       <div className="loading-icon" />
       <div className="percentage">
-        <p className="amount">64%</p>
+        <p className="amount">100%</p>
         <p className="status">Completed</p>
       </div>
     </div>
