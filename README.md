@@ -20,7 +20,7 @@ This app was built with:
 
 ## Live Demo
 
-[Live link here](magikbooks.herokuapp.com/)
+[Live link here](https://magikbooks.herokuapp.com/)
 
 ## Getting Started
 
