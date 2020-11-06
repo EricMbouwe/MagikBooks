@@ -2,7 +2,7 @@ A cool Book store built with react and redux
 
 <p align="center">
   <a href="https://github.com/ericmbouwe/magikbooks">
-    <img src="./pubilc/microverse.png" alt="Microverse Logo" width="80" height="80">
+    <img src="./public/microverse.png" alt="Microverse Logo" width="80" height="80">
   </a>
 </p>
 
