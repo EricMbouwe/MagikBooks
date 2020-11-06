@@ -1,8 +1,12 @@
 A cool Book store built with react and redux
 
-![](https://img.shields.io/badge/Microverse-blueviolet)
+<p align="center">
+  <a href="https://github.com/ericmbouwe/magikbooks">
+    <img src="./public/microverse.png" alt="Microverse Logo" width="80" height="80">
+  </a>
+</p>
 
-![screenshot](public/.png)
+![screenshot](public/bookstore.png)
 
 ## Built With
 
@@ -16,7 +20,7 @@ This app was built with:
 
 ## Live Demo
 
-[Live link here](magikbooks.herokuapp.com/)
+[Live link here](https://magikbooks.herokuapp.com/)
 
 ## Getting Started
 
@@ -47,9 +51,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser an
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
 
 ### `npm run build`
 
