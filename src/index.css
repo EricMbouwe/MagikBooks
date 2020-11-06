@@ -9,6 +9,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --pale-grey: #f5f6fa;
+  --white: #fff;
+  --azure: #0290ff;
+  --black-three: #121212;
+  --font: #fafafa;
+}
+
 body {
   background-color: var(--pale-grey);
   display: flex;
