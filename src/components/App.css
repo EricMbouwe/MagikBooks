@@ -1,4 +1,221 @@
 .App {
   text-align: center;
-  color: purple;
+  width: 900px;
+  background-color: var(--font);
+  padding-bottom: 100px;
+  box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.28);
+  -webkit-box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.28);
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+  height: 100%;
+}
+
+.book-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  margin: 10px 0;
+  padding: 15px;
+  border: solid 1px #e8e8e8;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.category {
+  opacity: 0.5;
+  font-size: 11px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-three);
+}
+
+.book-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: var(--black-three);
+}
+
+.author {
+  font-family: 'Roboto Slab', serif;
+  font-size: 11px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.actions button {
+  border: none;
+  background-color: transparent;
+  font-family: 'Roboto Slab', serif;
+  font-size: 11px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  padding: 0 10px;
+  border-right: 1px solid #e8e8e8;
+  cursor: pointer;
+}
+
+.progress-status button,
+.form-btn {
+  border-radius: 3px;
+  background-color: var(--azure);
+  border: none;
+  padding: 5px 15px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 10px;
+  color: var(--white);
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+}
+
+.actions button:focus,
+.progress-status button:focus {
+  outline: none;
+  transform: scale(1.05, 1.05);
+}
+
+.actions button:nth-child(1) {
+  padding: 0 10px 0 0;
+}
+
+.actions button:nth-child(3) {
+  border: none;
+}
+
+.book-status {
+  display: flex;
+  align-items: center;
+}
+
+.book-status .percentage {
+  margin-left: 20px;
+}
+
+.loading-icon {
+  border: 3px solid var(--medium-blue);
+  border-radius: 100%;
+  padding: 20px;
+}
+
+.percentage .amount {
+  font-size: 32px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-three);
+}
+
+.percentage .status {
+  font-size: 11px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-three);
+}
+
+.current-Chapter {
+  opacity: 0.5;
+  font-family: 'Roboto Slab', serif;
+  font-size: 13px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-three);
+}
+
+.current-Lesson {
+  font-family: 'Roboto Slab', serif;
+  font-size: 13px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: var(--black-three);
+}
+
+.progress-status {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+
+.form-section {
+  text-align: left;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+.form-section input[type=text],
+.form-section select {
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
+
+.form-section input[type=text] {
+  width: 60%;
+  padding: 10px;
+  margin-right: 2%;
+}
+
+.form-section input[type=text]:focus {
+  outline-color: var(--azure);
+}
+
+.form-section select {
+  width: 18%;
+  padding: 10px;
+  margin-right: 2%;
+}
+
+.form-section select:focus {
+  outline-color: var(--azure);
+}
+
+.form-btn {
+  border-radius: 3px;
+  background-color: var(--azure);
+  border: none;
+  padding: 10px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 13px;
+  color: var(--white);
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+  width: 18%;
 }

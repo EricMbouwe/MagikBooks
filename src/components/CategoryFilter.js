@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './CategoryFilter.css';
 
 const CategoryFilter = ({ handleChange }) => {
   const categories = [
@@ -18,18 +19,24 @@ const CategoryFilter = ({ handleChange }) => {
   };
 
   return (
-    <div>
-      <select
-        name="category"
-        id="category"
-        onChange={handleSelection}
-      >
-        {categories.map(category => (
-          <option value={category} key={category}>
-            {category}
-          </option>
-        ))}
-      </select>
+    <div className="" style={{ borderBottom: '1px solid #e8e8e8', backgroundColor: '#fff', padding: '20px' }}>
+      <div className="panel-bg container">
+        <h1 className="title">Bookstore CMS</h1>
+        <h4 className="books">BOOKS</h4>
+        <select
+          name="category"
+          id="category"
+          onChange={handleSelection}
+          className="categories"
+        >
+          {categories.map(category => (
+            <option value={category} key={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+        <div className="icon-avatar"><i className="fas fa-user-alt" /></div>
+      </div>
     </div>
   );
 };

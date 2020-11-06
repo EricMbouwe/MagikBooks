@@ -1,0 +1,59 @@
+.panel-bg {
+  background-color: #fff;
+  display: flex;
+  align-items: baseline;
+}
+
+.title {
+  color: var(--azure);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.books {
+  width: 59px;
+  height: 16px;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: var(--black-three);
+  margin: 0 30px;
+}
+
+.categories {
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  width: 18%;
+  letter-spacing: 1.9px;
+  color: var(--black-three);
+  padding: 5px;
+}
+
+.categories:focus {
+  outline-color: var(--azure);
+}
+
+.icon-avatar {
+  margin-left: 19em;
+  border: 1px solid #e8e8e8;
+  padding: 8px;
+  border-radius: 100%;
+}
+
+.icon-avatar i {
+  color: var(--azure);
+}
+
+.icon-avatar:hover {
+  background-color: var(--azure);
+  cursor: pointer;
+}
+
+.icon-avatar i:hover {
+  color: var(--white);
+  cursor: pointer;
+}
