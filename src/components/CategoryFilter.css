@@ -53,7 +53,7 @@
   cursor: pointer;
 }
 
-.icon-avatar i:hover {
+.icon-avatar:hover i {
   color: var(--white);
   cursor: pointer;
 }
