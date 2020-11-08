@@ -5,7 +5,7 @@ export const CHANGE_FILTER = 'CHANGE_FILTER';
 export const createBook = book => ({
   type: CREATE_BOOK,
   payload: {
-    book: { ...book, id: Math.floor(Math.random() * 10) },
+    book: { ...book, id: Math.random() },
   },
 });
 
